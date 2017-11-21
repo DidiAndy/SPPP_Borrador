@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Citas Tutor</title>
+    </h:head>
+    <h:body>
+        
+        <h:form>
+            
+            <center><legend><p:outputLabel value="Agendar cita"/></legend></center>
+            
+            
+            <br/><br/>
+            
+            <p:outputLabel value="Estudiante asignado: " /> <p:outputLabel value=" Karen Achig" /> 
+            <br/><br/><br/><br/>
+            <center> <p:outputLabel value="Fecha: "></p:outputLabel>
+                <p:calendar pattern="dd/MM/yyyy" locale="pt" value="#{controllerBean.data}"/>
+                
+                <p:commandButton value="Enviar" action="#{controllerBean.imprimirData()}"/>
+            
+            </center>
+        </h:form>
+    </h:body>
+</html>
+
