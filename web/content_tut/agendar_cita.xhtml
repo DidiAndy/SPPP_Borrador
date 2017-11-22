@@ -3,26 +3,40 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Citas Tutor</title>
     </h:head>
     <h:body>
         
         <h:form>
-            
-            <center><legend><p:outputLabel value="Agendar cita"/></legend></center>
+             <br/><br/>
+          
+            <legend><center><p:outputLabel value="Agendar cita"/></center></legend>
             
             
             <br/><br/>
+            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
+            <p:outputLabel value="Estudiante asignado:   " /> 
             
-            <p:outputLabel value="Estudiante asignado: " /> <p:outputLabel value=" Karen Achig" /> 
+             <p:selectOneMenu id="console" value="#{controllerBean.console}" style="width:125px">
+            <f:selectItem itemLabel="Karen Achig" itemValue="" />
+            <f:selectItem itemLabel="Bryan Torres" itemValue="Xbox One" />
+            <f:selectItem itemLabel="Andrea" itemValue="PS4" />
+            </p:selectOneMenu>
+            </h:panelGrid>
             <br/><br/><br/><br/>
             <center> <p:outputLabel value="Fecha: "></p:outputLabel>
                 <p:calendar pattern="dd/MM/yyyy" locale="pt" value="#{controllerBean.data}"/>
+                 <br/><br/>
+                <p:outputLabel for="time" value="Hora:" />
+                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" timeOnly="true"  />
+                 <br/><br/>
                 
                 <p:commandButton value="Enviar" action="#{controllerBean.imprimirData()}"/>
             
+                
             </center>
         </h:form>
     </h:body>

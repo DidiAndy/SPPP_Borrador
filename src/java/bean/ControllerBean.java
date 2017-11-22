@@ -17,6 +17,25 @@ import javax.faces.bean.SessionScoped;
 public class ControllerBean {
    
     private java.util.Date data;
+      private java.util.Date time;
+      private String console;
+
+    public String getConsole() {
+        return console;
+    }
+
+    public void setConsole(String console) {
+        this.console = console;
+    }
+
+    public Date getTime() {
+        return time;
+    }
+
+    public void setTime(Date time) {
+        this.time = time;
+    }
+    
 
     public Date getData() {
         return data;
