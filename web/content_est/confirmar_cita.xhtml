@@ -38,7 +38,7 @@
     			</p:column>
                          <p:column>
     				<f:facet name="header">Aprobar</f:facet>
-                                <center> <h:button class="btn btn-success" value="Si"/> &#160; <h:button class="btn btn-danger" value="No"/> </center>
+                                <center> <h:commandButton class="btn btn-success" value="Si" action="#{controllerBean.enviarCitaTut()}" /> &#160; <h:button class="btn btn-danger" value="No"/> </center>
     			</p:column>
   	                
             </p:dataTable>

@@ -30,13 +30,30 @@ public class ControllerBean {
       
         SimpleDateFormat sdf_data = new SimpleDateFormat("dd-MM-yyyy");  
    SimpleDateFormat sdf_time = new SimpleDateFormat("HH:mm");  
-       
-     private String console="----------------";
+       private String nombre_est="----------------";
+     private String console="----------------------";
        private String fechaConFormato ="----------"; 
       private String horaConFormato ="----------"; 
       private String envioCita ="Aún no cuenta con una cita previa";
-      private String fecha;
-      private String hora;
+      private String fecha="-------------------";
+      private String hora="-------------------";
+      private String nombre="------------------";
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getNombre_est() {
+        return nombre_est;
+    }
+
+    public void setNombre_est(String nombre_est) {
+        this.nombre_est = nombre_est;
+    }
  
     public String getConsole() {
         return console;
@@ -121,10 +138,16 @@ public class ControllerBean {
     public void enviarCita(){
         horaConFormato= sdf_time.format(time);
         fechaConFormato = sdf_data.format(data); 
+        console="Ing Rodas";
         envioCita="Ud cuenta con una cita previa por confirmar";
             
     }
-  
+  public void enviarCitaTut(){
+        fecha= sdf_time.format(time);
+        hora = sdf_data.format(data); 
+        nombre=nombre_est;    
+    }
+    
     /** evento para fecha seleccionado de agregar cita*/
   public void onDateSelect(SelectEvent event) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
