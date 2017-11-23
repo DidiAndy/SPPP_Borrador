@@ -69,8 +69,15 @@
         </p:dataTable>
 
 <br/> <br/> 
-                 <p:commandButton  value="Enviar" action="#{controllerBean.agregar()}" update="msgs" icon="ui-icon-check" />
+<p:commandButton  value="Enviar"   icon="ui-icon-check" >
+
+<p:confirm header="Confirmation" message="Seguro?" icon="ui-icon-alert" />
+</p:commandButton>
   
+ <p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+        <p:commandButton value="Si" action="#{controllerBean.agregar()}" update="msgs" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+    </p:confirmDialog>
                  
           </center>
                                                
