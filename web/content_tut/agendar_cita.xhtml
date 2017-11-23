@@ -11,6 +11,8 @@
     <h:body>
         
         <h:form>
+             <p:growl id="msgs" showDetail="true" />
+
              <br/><br/>
           
             <legend><center><p:outputLabel value="Agendar cita"/></center></legend>
@@ -20,24 +22,56 @@
             <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
             <p:outputLabel value="Estudiante asignado:   " /> 
             
-             <p:selectOneMenu id="console" value="#{controllerBean.console}" style="width:125px">
+            <p:selectOneMenu id="console" value="#{controllerBean.console}" style="width:125px">
             <f:selectItem itemLabel="Karen Achig" itemValue="" />
             <f:selectItem itemLabel="Bryan Torres" itemValue="Xbox One" />
             <f:selectItem itemLabel="Andrea" itemValue="PS4" />
             </p:selectOneMenu>
             </h:panelGrid>
-            <br/><br/><br/><br/>
+            <br/><br/>
             <center> <p:outputLabel value="Fecha: "></p:outputLabel>
-                <p:calendar pattern="dd/MM/yyyy" locale="pt" value="#{controllerBean.data}"/>
-                 <br/><br/>
+                <p:calendar pattern="dd/MM/yyyy" locale="pt" value="#{controllerBean.data}">
+                    <p:ajax event="dateSelect" listener="#{controllerBean.onDateSelect}" update="msgs" />
+                </p:calendar>
+                
+               
+                <br/><br/>
                 <p:outputLabel for="time" value="Hora:" />
                 <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" timeOnly="true"  />
                  <br/><br/>
-                
-                <p:commandButton value="Enviar" action="#{controllerBean.imprimirData()}"/>
+                 
+                 
+                 
+                 <p:dataTable var="horario" value="Horario Tutor">
+             <p:ajax event="rowSelect" listener="#{dtSelectionView.onRowSelect}"  />
+        <p:ajax event="rowUnselect" listener="#{dtSelectionView.onRowUnselect}"  />
+        
+            <p:column headerText="Lunes">
+                <h:outputText value="" />
+            </p:column>
+
+            <p:column headerText="Martes">
+                <h:outputText value="" />
+            </p:column>
+
+            <p:column headerText="Miercoles">
+                <h:outputText value="" />
+            </p:column>
+
+            <p:column headerText="Jueves">
+                <h:outputText value="" />
+            </p:column>
+            <p:column headerText="Viernes">
+                <h:outputText value="" />
+            </p:column>
+        </p:dataTable>
+
+<br/> <br/> 
+                 <p:commandButton  value="Enviar" action="#{controllerBean.agregar()}" update="msgs" icon="ui-icon-check" />
+  
+                 
+          </center>
             
-                
-            </center>
         </h:form>
     </h:body>
 </html>

@@ -1,0 +1,22 @@
+<ui:composition
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+     xmlns:p="http://primefaces.org/ui"
+     template="/templates/main.xhtml"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    <ui:define name="title">
+        Tutor
+    </ui:define>
+    
+    <ui:define name="barra-lateral">
+        <ui:include src="snippets/menu_tutor.xhtml" />
+    </ui:define>
+    
+     <ui:define name="contenido_tutor">
+         
+        <ui:include src="content_tut/citas_agendadas.xhtml" />
+        
+      </ui:define>
+    
+</ui:composition>
