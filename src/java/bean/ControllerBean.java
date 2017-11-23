@@ -23,10 +23,18 @@ import org.primefaces.event.UnselectEvent;
 @SessionScoped
 public class ControllerBean {
    
+    
+    
     java.util.Date data;
        java.util.Date time;
-      private String console;
-
+      
+        SimpleDateFormat sdf_data = new SimpleDateFormat("dd-MM-yyyy");  
+   SimpleDateFormat sdf_time = new SimpleDateFormat("HH:mm");  
+       
+     private String console="----------------";
+       private String fechaConFormato ="----------"; 
+      private String horaConFormato ="----------"; 
+      private String envioCita ="Aún no cuenta con una cita previa";
       private String fecha;
       private String hora;
  
@@ -73,6 +81,33 @@ public class ControllerBean {
     public void setData(Date data) {
         this.data = data;
     }
+
+    public String getFechaConFormato() {
+        return fechaConFormato;
+    }
+
+    public void setFechaConFormato(String fechaConFormato) {
+        this.fechaConFormato = fechaConFormato;
+    }
+
+    public String getHoraConFormato() {
+        return horaConFormato;
+    }
+
+    public void setHoraConFormato(String horaConFormato) {
+        this.horaConFormato = horaConFormato;
+    }
+
+    public String getEnvioCita() {
+        return envioCita;
+    }
+
+    public void setEnvioCita(String envioCita) {
+        this.envioCita = envioCita;
+    }
+
+    
+   
      
   public void imprimirData(){
       
@@ -81,6 +116,15 @@ public class ControllerBean {
       System.out.println("hola  "+data);
       
   }
+  
+  
+    public void enviarCita(){
+        horaConFormato= sdf_time.format(time);
+        fechaConFormato = sdf_data.format(data); 
+        envioCita="Ud cuenta con una cita previa por confirmar";
+            
+    }
+  
     /** evento para fecha seleccionado de agregar cita*/
   public void onDateSelect(SelectEvent event) {
         FacesContext facesContext = FacesContext.getCurrentInstance();
@@ -122,6 +166,7 @@ public class ControllerBean {
                 context.addMessage(null, new FacesMessage("Cita previa agendada"));
                
         }
+        enviarCita();
         }
   
   

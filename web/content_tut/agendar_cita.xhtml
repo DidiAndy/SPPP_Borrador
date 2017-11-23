@@ -7,6 +7,8 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Citas Tutor</title>
+        
+       
     </h:head>
     <h:body>
         
@@ -23,21 +25,21 @@
             <p:outputLabel value="Estudiante asignado:   " /> 
             
             <p:selectOneMenu id="console" value="#{controllerBean.console}" style="width:125px">
-            <f:selectItem itemLabel="Karen Achig" itemValue="" />
-            <f:selectItem itemLabel="Bryan Torres" itemValue="Xbox One" />
-            <f:selectItem itemLabel="Andrea" itemValue="PS4" />
+            <f:selectItem itemLabel="Karen Achig" itemValue="Ing. Rodas" />
+            <f:selectItem itemLabel="Bryan Torres" itemValue="Ing. Perez" />
+            <f:selectItem itemLabel="Andrea" itemValue="Ing. Guaranda" />
             </p:selectOneMenu>
             </h:panelGrid>
             <br/><br/>
             <center> <p:outputLabel value="Fecha: "></p:outputLabel>
-                <p:calendar pattern="dd/MM/yyyy" locale="pt" value="#{controllerBean.data}">
+                <p:calendar pattern="dd/MM/yyyy" locale="es" value="#{controllerBean.data}">
                     <p:ajax event="dateSelect" listener="#{controllerBean.onDateSelect}" update="msgs" />
                 </p:calendar>
                 
                
                 <br/><br/>
                 <p:outputLabel for="time" value="Hora:" />
-                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" timeOnly="true"  />
+                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" locale="es" timeOnly="true"  />
                  <br/><br/>
                  
                  
@@ -71,7 +73,7 @@
   
                  
           </center>
-            
+                                               
         </h:form>
     </h:body>
 </html>
