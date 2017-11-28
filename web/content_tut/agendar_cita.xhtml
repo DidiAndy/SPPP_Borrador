@@ -12,6 +12,7 @@
     <h:body>
         
         <h:form>
+            
              <p:growl id="msgs" showDetail="true" />
 
              <br/><br/>
@@ -24,6 +25,9 @@
             <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
             <p:outputLabel value="Estudiante asignado:   " /> 
             
+                <div class="container">
+                   <div class='col-lg-12'>
+        <div class='col-sm-6'>
             <div class="form-group input-group">
                                             <input type="text" class="form-control"/>
                                             <span class="input-group-btn">
@@ -31,31 +35,54 @@
                                                 </button>
                                             </span>
                                         </div>
-                                    
+                                    </div>
+                </div>
+                 </div>
 
             
-            
-            </h:panelGrid>
+ 
           
             <br/><br/>
-            <center> 
+            
                 
-                
-                <h:panelGrid columns="1" style="margin-bottom:10px" cellpadding="5">
-                <h:outputLabel value="Fecha: "></h:outputLabel>
-                <p:calendar pattern="dd/MM/yyyy" locale="es" class="form-control" value="#{controllerBean.data}">
-                    <p:ajax event="dateSelect" listener="#{controllerBean.onDateSelect}" update="msgs" />
-                </p:calendar>
-                
+         
+                    <center>       
                
+                <h:outputLabel  value="Fecha y Hora:" />
+                
+                   <div class="container">
+       
+        <div class='col-lg-12'>
+        <div class='col-sm-6'>
+       <div class="input-append date form_datetime" data-date="2012-12-21T15:25:00Z">
+    <input  type="text" class="form-control" />
+    <span class="add-on"><i class="icon-remove"></i></span>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div>
+ 
+<script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+        
+        format: "dd MM yyyy - HH:ii P",
+        showMeridian: true,
+        autoclose: true,
+        todayBtn: true,
+        languaje: 'br'
+      
+    });
+</script> 
+                
+                
+      
+    </div>
+</div>       
+                   </div>
+                </center>
                 <br/><br/>
-                <h:outputLabel for="time" value="Hora:" />
-                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" locale="es" timeOnly="true"  />
-                 <br/><br/>
                  
                  </h:panelGrid>
                 
-            </center>
+           
             <center>
                     <div class="panel panel-default">
                         <div class="panel-heading">
@@ -96,7 +123,7 @@
 </center>
 <br/> <br/> 
            
-            <center>
+       <center>
            <div class="row">
                 <div class="col-lg-6">
                         
