@@ -50,10 +50,11 @@
                
                 <br/><br/>
                 <h:outputLabel for="time" value="Hora:" />
-                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" locale="es" timeOnly="true" required="true" />
+                <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" locale="es" timeOnly="true"  />
                  <br/><br/>
                  
                  </h:panelGrid>
+                
             </center>
             <center>
                     <div class="panel panel-default">
@@ -96,12 +97,17 @@
 <br/> <br/> 
            
             <center>
-<div class="panel-body">
+           <div class="row">
+                <div class="col-lg-6">
+                        
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
                             <!-- Button trigger modal -->
                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                                 Enviar
                             </button>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <!-- Modal -->
+                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -109,7 +115,8 @@
                                             <h4 class="modal-title" id="myModalLabel">Confirmacion</h4>
                                         </div>
                                         <div class="modal-body">
-                                      ¿Seguro desea agendar ciita?
+                                           
+                                        ¿Seguro desea agendar la cita?
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
@@ -122,11 +129,15 @@
                             </div>
                             <!-- /.modal -->
                         </div>
-                        <!-- .panel-body -->
-
+                       
+                </div>
+              </div>
+ 
           </center>
                                                
         </h:form>
+        
+        
     </h:body>
 </html>
 
