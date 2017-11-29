@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 29/11/2017 14:51:08 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="model.TbPreguntas" table="tb_preguntas" schema="public" optimistic-lock="version">
+        <id name="idPreguntas" type="int">
+            <column name="id_preguntas" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="tbFormato" class="model.TbFormato" fetch="select">
+            <column name="id_formato" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="descripcion" length="300" />
+        </property>
+        <property name="estadoPreguntas" type="java.lang.Boolean">
+            <column name="estado_preguntas" />
+        </property>
+    </class>
+</hibernate-mapping>

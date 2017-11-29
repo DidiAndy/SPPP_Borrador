@@ -2,6 +2,7 @@
      xmlns="http://www.w3.org/1999/xhtml"
      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
      xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:p="http://primefaces.org/ui"
      xmlns:h="http://xmlns.jcp.org/jsf/html">
     
     
@@ -104,7 +105,7 @@
                                         <tr>
                                             <td rowspan="3"><center><b>Cuestionario</b></center></td>
                                         
-                                            <td colspan="5"><center><b>EScala</b></center></td>
+                                            <td colspan="5"><center><b>Escala</b></center></td>
                                             </tr>
                                         <tr>
                                             <td><center><b>1</b></center></td>
@@ -134,6 +135,8 @@
                 
                 
 </center>
+                    
+                   
                 
             <label>En caso de tener observaciones, inquietudes y/o sugerencias, detallar a continuacion:</label>
                                             <textarea class="form-control"  rows="3"></textarea>    
@@ -150,5 +153,12 @@
                  </div>
                 </div>
             <br/><br/>
+            
+            <h:outputLabel value="Pais"/>
+             <h:selectOneMenu id="preguntas" value="#{formatosBean.preguntas.idPreguntas}">
+                 <f:selectItem itemLabel="Lol" itemValue=""/>
+                        <f:selectItem itemValue="#{formatosBean.listPreguntas}"/>
+                        
+                    </h:selectOneMenu>
       </h:form>
 </ui:composition>
