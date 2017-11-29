@@ -4,11 +4,15 @@
      template="/templates/main.xhtml">
     
     <ui:define name="title">
-        Encargado
+        Estudiante
     </ui:define>
     
     <ui:define name="barra-lateral">
-        <ui:include src="snippets/menu_encargado.xhtml" />
+        <ui:include src="/snippets/menu_estudiante.xhtml" />
+    </ui:define>
+    
+    <ui:define name="contenido">
+        <ui:include src="/content_est/solicitud_vfinal_est.xhtml" />
     </ui:define>
     
 </ui:composition>

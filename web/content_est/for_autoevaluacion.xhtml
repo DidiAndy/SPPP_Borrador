@@ -1,0 +1,104 @@
+<ui:composition
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    
+        
+        <h:form>
+            
+            
+            <br/><br/>
+          
+            <legend><center><h:outputLabel value="Autoevaluación"/></center></legend>
+            <br/><br/>
+            
+           <div class="row" >
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Formulario de Autoevaluación:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    
+                                    Carta compromiso:
+                                    
+                                   </div>
+                                 <div class="col-lg-4">
+                                    
+                                   <h:inputText class="form-control" value="" disabled="true"/>
+                                    
+                                   </div>
+                                <div class="col-lg-2">
+                                    
+                                    Tipo de actividad:
+                                    
+                                   </div>
+                                 <div class="col-lg-4">
+                                    
+                                   <h:inputText class="form-control" value="" disabled="true"/>
+                                    
+                                   </div>
+                                <br/><br/>
+                                 <div class="col-lg-2">
+                                    
+                                    Resolución de consejo de inicio de actividad:
+                                    
+                                   </div>
+                                 <div class="col-lg-4">
+                                    
+                                   <h:inputText class="form-control" value="" disabled="true"/>
+                                    
+                                   </div>
+                                <br/><br/>
+                                
+                                <div class="col-lg-2">
+                                    
+                                    Estudiante:
+                                    
+                                   </div>
+                                 <div class="col-lg-4">
+                                    
+                                   <h:inputText class="form-control" value="" disabled="true"/>
+                                    
+                                   </div>
+                                <div class="col-lg-2">
+                                    
+                                    C.I. estudiante:
+                                    
+                                   </div>
+                                 <div class="col-lg-4">
+                                    
+                                   <h:inputText class="form-control" value="" disabled="true"/>
+                                    
+                                   </div>
+                                <br/><br/>
+                               
+                              
+                                
+                            </div>
+                          
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <br/>
+                
+                <h:outputLabel value = "#{controllerBean.observaciones}" />
+                <center>
+                <h:inputTextarea  class="form-control" rows="3"  rendered="#{controllerBean.observaciones.length() > 0 eq true}"/>
+            
+                <br/>
+                
+                <h:commandButton  class="btn btn-primary" value="Enviar" rendered="#{controllerBean.observaciones.length() > 0 eq true}" action="#{controllerBean.envioObservacion()}"/>
+            
+            </center>
+        </h:form>
+</ui:composition>
+

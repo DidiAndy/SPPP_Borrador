@@ -1,89 +1,82 @@
-<?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
-    <h:head>
-        <title>Citas Tutor</title>
+<ui:composition
+     xmlns="http://www.w3.org/1999/xhtml"
+     xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+     xmlns:f="http://xmlns.jcp.org/jsf/core"
+     xmlns:p="http://primefaces.org/ui"
+     xmlns:h="http://xmlns.jcp.org/jsf/html">
+    
+    
         
-       
-    </h:head>
-    <h:body>
-        
-        <h:form>
+       <h:form>
             
-             <p:growl id="msgs" showDetail="true" />
-
+            
              <br/><br/>
           
-            <legend><center><p:outputLabel value="Agendar cita"/></center></legend>
-            
+            <legend><center><h:outputLabel value="Agendar cita"/></center></legend>
             
             <br/><br/>
             
-            <h:panelGrid columns="2" style="margin-bottom:10px" cellpadding="5">
-            <p:outputLabel value="Estudiante asignado:   " /> 
-            
-                <div class="container">
-                   <div class='col-lg-12'>
-        <div class='col-sm-6'>
-            <div class="form-group input-group">
-                                            <input type="text" class="form-control"/>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Solicitud:
+                        </div>
+                        <div class="panel-body">
+                            <div class="row">
+                                <div class="col-lg-2">
+                                    
+                                 Estudiante asignado:
+                                   
+                                   </div>
+                                <div class="col-lg-10">
+                                    <div class="form-group input-group" style="width: 24.5%">
+                                        <h:inputText class="form-control" value="#{controllerBean.nombre_est}" />
                                             <span class="input-group-btn">
                                                 <button class="btn btn-default" type="button"><i class="fa fa-search"></i>
                                                 </button>
                                             </span>
-                                        </div>
-                                    </div>
-                </div>
-                 </div>
-
-            
- 
-          
-            <br/><br/>
-            
-                
-         
-                    <center>       
-               
-                <h:outputLabel  value="Fecha y Hora:" />
-                
-                   <div class="container">
-       
-        <div class='col-lg-12'>
-        <div class='col-sm-6'>
-       <div class="input-append date form_datetime" data-date="2012-12-21T15:25:00Z">
-    <input  type="text" class="form-control" />
-    <span class="add-on"><i class="icon-remove"></i></span>
-    <span class="add-on"><i class="icon-th"></i></span>
-</div>
- 
-<script type="text/javascript">
-    $(".form_datetime").datetimepicker({
-        
-        format: "dd MM yyyy - HH:ii P",
-        showMeridian: true,
-        autoclose: true,
-        todayBtn: true,
-        languaje: 'br'
-      
-    });
-</script> 
-                
-                
-      
-    </div>
-</div>       
-                   </div>
-                </center>
-                <br/><br/>
+                                     </div>
+                                   </div>
+                                
+                                <br/><br/>
+                                <div class="col-lg-2">
+                                    
+                                   Fecha de cita:
+                                   
+                                    
+                                   </div>
+                                <div class="col-lg-10">
+                                    
+                                  
+                                    <p:calendar pattern="dd/MM/yyyy" style="date-input" locale="es" value="#{controllerBean.data}"  > 
                  
-                 </h:panelGrid>
+                </p:calendar>
+                                    
+                                   </div>
+                                
+                                <br/><br/><br/>
+                                <div class="col-lg-2">
+                                    
+                                   Hora de cita:
+                                                   
+                                   </div>
+                                   <div class="col-lg-10">
+                                  
+               <p:calendar id="time" value="#{controllerBean.time}" pattern="HH:mm" timeOnly="true" locale="es"  />
                 
-           
-            <center>
+                                    
+                                   </div>
+                                
+                                <br/><br/>
+                                 <div class="col-lg-12">
+                                 
+                                     <center> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Enviar</button> </center>
+                                    <br/>
+                                   </div>
+                                 <br/><br/>
+                                 <div class="col-lg-12">
+                                  <center>
                     <div class="panel panel-default">
                         <div class="panel-heading">
                           Horario
@@ -103,11 +96,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>#{controllerBean.console}</td>
-                                            <td>#{controllerBean.console}</td>
-                                            <td>#{controllerBean.console}</td>
-                                            <td>#{controllerBean.console}</td>                                 
-                                            <td>#{controllerBean.console}</td>
+                                            <td>#{controllerBean.nombre}</td>
+                                            <td>#{controllerBean.nombre}</td>
+                                            <td>#{controllerBean.nombre}</td>
+                                            <td>#{controllerBean.nombre}</td>                                 
+                                            <td>#{controllerBean.nombre}</td>
                                         </tr>
                                       
                                     </tbody>
@@ -122,49 +115,41 @@
                 
 </center>
 <br/> <br/> 
-           
-       <center>
-           <div class="row">
-                <div class="col-lg-6">
-                        
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <!-- Button trigger modal -->
-                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-                                Enviar
-                            </button>
-                            <!-- Modal -->
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                            <h4 class="modal-title" id="myModalLabel">Confirmacion</h4>
-                                        </div>
-                                        <div class="modal-body">
-                                           
-                                        ¿Seguro desea agendar la cita?
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-                                            <h:commandButton class="btn btn-primary" value="Si" action="#{controllerBean.agregar()}"></h:commandButton>
-                                        </div>
-                                    </div>
-                                    <!-- /.modal-content -->
-                                </div>
-                                <!-- /.modal-dialog -->
+                                    
+                                   </div>
+                                
                             </div>
-                            <!-- /.modal -->
+                          
                         </div>
-                       
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
                 </div>
-              </div>
- 
-          </center>
-                                               
+                <!-- /.col-lg-12 -->
+            </div>
+            
+       <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">X</button>
+        <h4 class="modal-title">Alerta!!!</h4>
+      </div>
+      <div class="modal-body">
+          Seguro desea realizar el envio?
+         </div>
+      <div class="modal-footer">
+          <h:commandButton class="btn btn-primary" value="Si" action="#{controllerBean.agregar()}"  />
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+        
+           
         </h:form>
         
-        
-    </h:body>
-</html>
-
+  </ui:composition>
