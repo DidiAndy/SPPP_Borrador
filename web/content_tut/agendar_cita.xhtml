@@ -49,11 +49,23 @@
                                 <div class="col-lg-10">
                                     
                                   
-                                    <p:calendar pattern="dd/MM/yyyy" style="date-input" locale="es" value="#{controllerBean.data}"  > 
+                                    <p:calendar id="fecha" pattern="dd/MM/yyyy" style="date-input" beforeShowDay="fridaysDisabled"  locale="es"  mindate="today" value="#{controllerBean.data}"  > 
                  
                 </p:calendar>
                                     
                                    </div>
+                                 <script>
+       function fridaysDisabled(date)
+{
+  var day = date.getDay();
+ 
+  
+  return [day != 0, '']
+}
+
+today = Date();
+
+</script>
                                 
                                 <br/><br/><br/>
                                 <div class="col-lg-2">
@@ -68,12 +80,17 @@
                                     
                                    </div>
                                 
+                                
+          
+                                
+                                
                                 <br/><br/>
                                  <div class="col-lg-12">
                                  
                                      <center> <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal"  >Enviar</button> </center>
                                     <br/>
                                    </div>
+                                
                                  <br/><br/>
                                  <div class="col-lg-12">
                                   <center>
@@ -96,11 +113,11 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>#{controllerBean.nombre}</td>
-                                            <td>#{controllerBean.nombre}</td>
-                                            <td>#{controllerBean.nombre}</td>
-                                            <td>#{controllerBean.nombre}</td>                                 
-                                            <td>#{controllerBean.nombre}</td>
+                                            <td>#{controllerBean.total}</td>
+                                            <td>#{controllerBean.total1}</td>
+                                            <td>#{controllerBean.total2}</td>
+                                            <td>#{controllerBean.total3}</td>                                 
+                                            <td>#{controllerBean.total4}</td>
                                         </tr>
                                       
                                     </tbody>
@@ -141,14 +158,14 @@
           Seguro desea realizar el envio?
          </div>
       <div class="modal-footer">
-          <h:commandButton class="btn btn-primary" value="Si" action="#{controllerBean.agregar()}"  />
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+          <h:commandButton class="btn btn-primary" value="Si" action="#{controllerBean.enviarCita()}"  />
+        <button type="button" class="btn btn-default" data-dismiss="modal" >Cerrar</button>
       </div>
     </div>
 
   </div>
 </div>
-        
+           
            
         </h:form>
         

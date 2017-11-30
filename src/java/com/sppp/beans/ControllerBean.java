@@ -37,6 +37,13 @@ public class ControllerBean {
       private String fecha="-------------------";
       private String hora="-------------------";
       private String nombre="------------------";
+     private   String total="------------------";
+     
+     private   String total1="------------------";
+     private   String total2="------------------";
+     private   String total3="------------------";
+     
+     private   String total4="------------------";
       private String observaciones;
 
     public String getNombre() {
@@ -131,6 +138,46 @@ public class ControllerBean {
         this.observaciones = observaciones;
     }
 
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public String getTotal1() {
+        return total1;
+    }
+
+    public void setTotal1(String total1) {
+        this.total1 = total1;
+    }
+
+    public String getTotal2() {
+        return total2;
+    }
+
+    public void setTotal2(String total2) {
+        this.total2 = total2;
+    }
+
+    public String getTotal3() {
+        return total3;
+    }
+
+    public void setTotal3(String total3) {
+        this.total3 = total3;
+    }
+
+    public String getTotal4() {
+        return total4;
+    }
+
+    public void setTotal4(String total4) {
+        this.total4 = total4;
+    }
+
     
   
      
@@ -172,6 +219,7 @@ public class ControllerBean {
         fecha= sdf_time.format(time);
         hora = sdf_data.format(data); 
         nombre=nombre_est;   
+        agregar();
         blanqueo();
     }
     
@@ -190,33 +238,32 @@ public class ControllerBean {
  GregorianCalendar cal = new GregorianCalendar();
 	cal.setTime(data);
         dia=cal.get(Calendar.DAY_OF_WEEK);
+      
+        hora= sdf_time.format(time);
+        fecha = sdf_data.format(data); 
         if(dia==1){
-                context.addMessage(null, new FacesMessage("La fecha debe ser de Lunes a Viernes"));
-        }
-        if(dia==7){
-                context.addMessage(null, new FacesMessage("La fecha debe ser de Lunes a Viernes"));
-               
-        }
-        
-        if(dia==2){
-                context.addMessage(null, new FacesMessage("Cita previa agendada"));
               
+                        total4="Fecha:    "+fecha+"   Hora:  "+hora;
+
+        }
+        if(dia==2){
+                       total="Fecha:       "+fecha+"   Hora: "+hora;
+        
         }
         
         if(dia==3){
-                context.addMessage(null, new FacesMessage("Cita previa agendada"));
-            }
-        if(dia==4){
-                context.addMessage(null, new FacesMessage("Cita previa agendada"));
-            }
-        if(dia==5){
-                context.addMessage(null, new FacesMessage("Cita previa agendada"));
-                    }
-        if(dia==6){
-                context.addMessage(null, new FacesMessage("Cita previa agendada"));
-               
+                         total1="Fecha:     "+fecha+"   Hora: "+hora;
+     
         }
-        enviarCita();
+        
+        if(dia==4){
+                          total2="Fecha:     "+fecha+"    Hora: "+hora;
+  }
+        if(dia==5){
+                        total3="Fecha:       "+fecha+"    Hora: "+hora;
+   
+        }
+        
         }
   
   
