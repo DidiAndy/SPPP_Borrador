@@ -241,26 +241,26 @@ public class ControllerBean {
       
         hora= sdf_time.format(time);
         fecha = sdf_data.format(data); 
-        if(dia==1){
+        if(dia==6){
               
-                        total4="Fecha:    "+fecha+"   Hora:  "+hora;
+                        total4="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
 
         }
         if(dia==2){
-                       total="Fecha:       "+fecha+"   Hora: "+hora;
+                       total="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
         
         }
         
         if(dia==3){
-                         total1="Fecha:     "+fecha+"   Hora: "+hora;
+                         total1="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
      
         }
         
         if(dia==4){
-                          total2="Fecha:     "+fecha+"    Hora: "+hora;
+                          total2="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
   }
         if(dia==5){
-                        total3="Fecha:       "+fecha+"    Hora: "+hora;
+                        total3="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
    
         }
         
