@@ -44,6 +44,8 @@ public class ControllerBean {
      private   String total3="------------------";
      
      private   String total4="------------------";
+     
+     private   String total5="------------------";
       private String observaciones;
 
     public String getNombre() {
@@ -178,6 +180,14 @@ public class ControllerBean {
         this.total4 = total4;
     }
 
+    public String getTotal5() {
+        return total5;
+    }
+
+    public void setTotal5(String total5) {
+        this.total5 = total5;
+    }
+
     
   
      
@@ -241,6 +251,7 @@ public class ControllerBean {
       
         hora= sdf_time.format(time);
         fecha = sdf_data.format(data); 
+        System.out.println("sdgsfgfdgfsgsf"+dia);
         if(dia==6){
               
                         total4="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
@@ -263,6 +274,11 @@ public class ControllerBean {
                         total3="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
    
         }
+        
+        if(dia==7){
+                        total5="!!PASANTIA!! "+"Cita con Est: "+nombre_est+" Fecha:    "+fecha+"   Hora:  "+hora;
+   
+        } 
         
         }
   
